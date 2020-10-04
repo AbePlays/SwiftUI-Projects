@@ -51,9 +51,9 @@ Retrieving data
     // Save latest data to CoreData
     try? moc.save()
     
-# Tips & Tricks
+## Tips & Tricks
 
-## Dismiss a View
+### Dismiss a View
 
     @Environment(\.presentationMode) var presentationMode
 
