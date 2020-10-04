@@ -38,3 +38,17 @@ Retrieving data
         }
         print("Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
     }.resume()
+
+## Working with CoreData
+
+    @Environment(\.managedObjectContext) var moc
+
+    @FetchRequest(entity: Book.entity(), sortDescriptors: [
+        NSSortDescriptor(keyPath: \Book.title, ascending: true),
+        NSSortDescriptor(keyPath: \Book.author, ascending: true)
+    ]) var books: FetchedResults<Book>
+    
+    // Save latest data to CoreData
+    try? moc.save()
+    
+    
