@@ -80,6 +80,28 @@ Retrieving data
     @Environment(\.presentationMode) var presentationMode
 
     presentationMode.wrappedValue.dismiss()
+    
+### Adding context menu
+
+    .contextMenu {
+        Button(action: {
+            // Do something
+        }) {
+            Text("Red")
+        }
+
+        Button(action: {
+            // Do something
+        }) {
+            Text("Green")
+        }
+
+        Button(action: {
+            // Do something
+        }) {
+            Text("Blue")
+        }
+    }
 
 ### TabView and NavView
 
