@@ -51,6 +51,28 @@ Retrieving data
     // Save latest data to CoreData
     try? moc.save()
     
+## Working with Biometrics
+
+    Import LocalAuthentication
+
+    let authContext = LAContext()
+    var error : NSError?
+
+    if authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+
+      authContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Authentication Required") {       (success, error) in
+        if success == true {
+          DispatchQueue.main.async {
+            //Correct Biometric
+          }
+        } else {
+          DispatchQueue.main.async {
+            //Wrong Biometric
+          }
+        }
+      }
+    }
+    
 ## Tips & Tricks
 
 ### Dismiss a View
