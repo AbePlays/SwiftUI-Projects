@@ -10,11 +10,11 @@
 
 ## Working with UserDefaults
 
-Saving data
+### Saving data
 
     UserDefaults.standard.set(self.tapCount, forKey: "Tap")
     
-Retrieving data
+### Retrieving data
 
     UserDefaults.standard.integer(forKey: "Tap")
     
@@ -77,7 +77,7 @@ Retrieving data
 
     import UserNotifications
 
-Ask for permission to send notifs
+### Ask for permission to send notifs
 
     UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
         if success {
@@ -87,7 +87,7 @@ Ask for permission to send notifs
         }
     }
 
-Schedule Notif
+### Schedule Notifs
 
     let content = UNMutableNotificationContent()
     content.title = "Feed the cat"
@@ -110,7 +110,7 @@ Schedule Notif
     let context = CIContext()
     let filter = CIFilter.qrCodeGenerator()
     
-Function to generate QR Code
+### Function to generate QR Code
 
     func generateQRCode(from string: String) -> UIImage {
         let data = Data(string.utf8)
@@ -125,7 +125,7 @@ Function to generate QR Code
         return UIImage(systemName: "xmark.circle") ?? UIImage()
     }
    
-Showing QR Code in the view
+### Showing QR Code in the view
 
     Image(uiImage: generateQRCode(from: "\(name)\n\(emailAddress)"))
         .interpolation(.none)
